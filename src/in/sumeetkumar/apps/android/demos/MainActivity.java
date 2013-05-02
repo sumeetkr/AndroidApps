@@ -1,22 +1,33 @@
 package in.sumeetkumar.apps.android.demos;
+import java.util.ArrayList;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.app.ListActivity;
+import android.widget.ArrayAdapter;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ListActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+	 protected static final String TAG = "RANGE_SEEKER";
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+	//LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
+    ArrayList<String> listItems=new ArrayList<String>();
 
+    //DEFINING STRING ADAPTER WHICH WILL HANDLE DATA OF LISTVIEW
+    ArrayAdapter<String> adapter;
+
+    //RECORDING HOW MUCH TIMES BUTTON WAS CLICKED
+    int clickCounter=0;
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setContentView(R.layout.activity_main);
+        
+        listItems.add("Clicked : "+clickCounter++);
+        
+        adapter=new ArrayAdapter<String>(this,
+            android.R.layout.simple_list_item_1,
+            listItems);
+        setListAdapter(adapter);
+    }
 }

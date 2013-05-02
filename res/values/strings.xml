@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">in.sumeetkumar.apps.android.demos</string>
+    <string name="app_name">Sumeet\'s Android Apps</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_range_seeker_with_map">RangeSeekerWithMap</string>
+    <string name="to">to:</string>
+    <string name="from">from:</string>
+    <string name="unknown_activity">Unknown Activity</string>
 
 </resources>
